@@ -4,14 +4,14 @@
 using namespace std;
 
 template <typename T>
-T* GiveMemory(T* arr, int size)
+T* GiveMemoryT(T* arr, int size)
 {
 	arr = new T[size];
 	return arr;
 }
 
 template <typename T>
-void FillArr(T* arr_start, int arr_size)
+void FillArrT(T* arr_start, int arr_size)
 {
 	for (int i = 0; i < arr_size; i++)
 	{
@@ -21,7 +21,7 @@ void FillArr(T* arr_start, int arr_size)
 }
 
 template <typename T>
-void ShowArr(T* arr_start, int arr_size)
+void ShowArrT(T* arr_start, int arr_size)
 {
 	for (int i = 0; i < arr_size; i++)
 	{
@@ -30,14 +30,15 @@ void ShowArr(T* arr_start, int arr_size)
 }
 
 template <typename T>
-void Replace(T* arr, int size)
+void ReplaceT(T* arr, int size)
+
 {
 	int index;
 	cout << "Элемент с каким номером вы хотите заменить?" << endl;
 	cin >> index;
 	cout << "arr[" << index << "] = ";
 	cin >> *(arr + index - 1);
-	ShowArr(arr, size);
+	ShowArrT(arr, size);
 }
 
 void main()
@@ -57,16 +58,16 @@ void main()
 	{
 	case 1:
 	{
-		arr_double = GiveMemory(arr_double, size); 
-		FillArr(arr_double, size);
-		Replace(arr_double, size);
+		arr_double = GiveMemoryT(arr_double, size); 
+		FillArrT(arr_double, size);
+		ReplaceT(arr_double, size);
 		break;
 	}
 	case 2:
 	{
-		arr_int = GiveMemory(arr_int, size); 
-		FillArr(arr_int, size);
-		Replace(arr_int, size);
+		arr_int = GiveMemoryT(arr_int, size); 
+		FillArrT(arr_int, size);
+		ReplaceT(arr_int, size);
 		break;
 	}
 	}
